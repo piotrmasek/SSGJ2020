@@ -17,7 +17,7 @@ jobs:
         projectPath:
           - Japco/
         unityVersion:
-          - 2019.3.0f5
+          - 2019.3.0f1
         targetPlatform:
 #           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           - StandaloneWindows # Build a Windows standalone.
