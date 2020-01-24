@@ -1,0 +1,44 @@
+name: Build project
+
+on:
+  pull_request: {}
+  push: { branches: [master] }
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  buildForSomePlatforms:
+    name: Build for ${{ matrix.targetPlatform }} on version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - Japco/
+        unityVersion:
+          - 2019.3.0f5
+        targetPlatform:
+#           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+          - StandaloneWindows # Build a Windows standalone.
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          - StandaloneLinux64 # Build a Linux 64-bit standalone.
+#           - iOS # Build an iOS player.
+#           - Android # Build an Android .apk standalone app.
+          - WebGL # WebGL.
+#           - WSAPlayer # Build an Windows Store Apps player.
+#           - PS4 # Build a PS4 Standalone.
+#           - XboxOne # Build a Xbox One Standalone.
+#           - tvOS # Build to Apple's tvOS platform.
+#           - Switch # Build a Nintendo Switch player.
+    steps:
+      - uses: actions/checkout@v1
+      - uses: webbertakken/unity-builder@v0.5
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Build
+          path: build
