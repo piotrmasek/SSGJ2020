@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2721162917258529567}
   - component: {fileID: 2721162917258529564}
-  - component: {fileID: 2721162917258529566}
   - component: {fileID: 2721162917258529565}
   m_Layer: 0
   m_Name: LeftBoundry
@@ -83,27 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2721162917258529566
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2721162917258529570}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &2721162917258529565
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +118,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2721162917367628111}
   - component: {fileID: 2721162917367628108}
-  - component: {fileID: 2721162917367628110}
   - component: {fileID: 2721162917367628109}
   m_Layer: 0
   m_Name: TopBoundry
@@ -213,27 +190,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2721162917367628110
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2721162917367628114}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &2721162917367628109
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -304,7 +260,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2721162918609883503}
   - component: {fileID: 2721162918609883500}
-  - component: {fileID: 2721162918609883502}
   - component: {fileID: 2721162918609883501}
   m_Layer: 0
   m_Name: RightBoundry
@@ -377,27 +332,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2721162918609883502
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2721162918609883506}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &2721162918609883501
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -434,7 +368,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2721162919309463583}
   - component: {fileID: 2721162919309463580}
-  - component: {fileID: 2721162919309463582}
   - component: {fileID: 2721162919309463581}
   m_Layer: 0
   m_Name: BottomBoundry
@@ -507,27 +440,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2721162919309463582
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2721162919309463586}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &2721162919309463581
 BoxCollider2D:
   m_ObjectHideFlags: 0
