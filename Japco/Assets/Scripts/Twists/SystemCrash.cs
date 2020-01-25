@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+
+using Interactions;
 using Outfrost;
 
 namespace Twists {
