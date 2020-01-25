@@ -8,7 +8,7 @@ public class ScreenLoader : MonoBehaviour
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1)
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
     public void LoadStartScene()
