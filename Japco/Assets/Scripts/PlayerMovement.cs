@@ -136,7 +136,6 @@ public class PlayerMovement : CheckedMonoBehaviour
             // Check if any of the contact points are unerneath
             foreach (var contact in other.contacts)
             {
-                Debug.Log(contact.normal, this);
                 if (contact.normal.y > 0.8f)
                 {
                     isGrounded = true;
