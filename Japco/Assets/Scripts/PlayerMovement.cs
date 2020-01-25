@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rigidBody;
     bool isGrounded = true;
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        Time.timeScale = 1.0f;
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
