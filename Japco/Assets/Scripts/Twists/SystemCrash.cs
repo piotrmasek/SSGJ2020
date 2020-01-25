@@ -2,29 +2,31 @@
 
 using Interactions;
 using Outfrost;
+using TMPro;
 
 namespace Twists {
 
-	public class SystemCrash : MonoBehaviour {
+	public class SystemCrash : CheckedMonoBehaviour {
 
+		[ExpectAttached]
 		public ClickBox clickBox;
+		[ExpectAttached]
+		public TextMeshProUGUI textObject;
+		[ExpectAttached]
+		public TextAsset segfault;
 
 		private bool triggered = false;
 
 		private void Start() {
-			if (!Util.IsPrefab(gameObject)) {
-				if (! clickBox) {
-					Debug.LogError("No ClickBox reference attached");
-					enabled = false;
-				}
-			}
+			CheckReferences();
 		}
 
 		private void Update() {
 			if (!Util.IsPrefab(gameObject)) {
 				if (! triggered && clickBox.Clicked) {
 					triggered = true;
-					// Here is where we do the crash visuals lol
+					// TODO make game freeze
+					textObject.text = segfault.text;
 				}
 			}
 		}
