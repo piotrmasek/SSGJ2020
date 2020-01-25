@@ -33,7 +33,7 @@ namespace Twists {
 					if (clickBox.Clicked) {
 						timeTriggered = Time.unscaledTime;
 
-						// TODO make game freeze
+						Time.timeScale = 0.0f;
 
 						StartCoroutine(NextSceneAfter(5.0f));
 					}
