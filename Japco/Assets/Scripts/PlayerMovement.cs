@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.velocity = new Vector2(horizontal * movementSpeed, rigidBody.velocity.y);
 
 
-        if (horizontal != 0f)
+        if(horizontal != 0f)
         {
             animator.SetBool("IsMoving", true);
             if (!particleMoveRight.isPlaying && horizontal < 0) particleMoveRight.Play();
@@ -68,18 +68,17 @@ public class PlayerMovement : MonoBehaviour
             if (particleMoveLeft.isPlaying) particleMoveLeft.Stop();
         }
 
-        if(rigidBody.velocity.y == 0)
+        if (rigidBody.velocity.y == 0)
         {
             isJumping = false;
-            isGrounded = true;
         }
 
-        if(Input.GetKeyDown("space") && isGrounded)
+        if (Input.GetAxis("Jump") != 0f && isGrounded)
         {
             Jump();
         }
 
-        if (Input.GetKey("space") && isGrounded == false && isJumping)
+        if (Input.GetAxis("Jump") != 0f && isGrounded == false && isJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -107,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Fallin");
         if (rigidBody.velocity.y < 0)
         {
-            Debug.Log(rigidBody.velocity.x + ", " + rigidBody.velocity.y); 
+            Debug.Log(rigidBody.velocity.x + ", " + rigidBody.velocity.y);
         }
         else
         {
@@ -128,4 +127,28 @@ public class PlayerMovement : MonoBehaviour
         isJumping = true;
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Platform")
+        {
+            // Check if any of the contact points are unerneath
+            foreach (var contact in other.contacts)
+            {
+                Debug.Log(contact.normal, this);
+                if (contact.normal.y > 0.8f)
+                {
+                    isGrounded = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Platform")
+        {
+            isGrounded = false;
+        }
+    }
 }

@@ -1,34 +1,65 @@
-﻿using UnityEngine;
-
+﻿using System;
+using System.Collections;
+using System.Linq;
+using System.Text;
+using UnityEngine;
 using Interactions;
 using Outfrost;
 using TMPro;
+using UnityEngine.Assertions;
 
 namespace Twists {
 
 	public class SystemCrash : CheckedMonoBehaviour {
 
-		[ExpectAttached]
-		public ClickBox clickBox;
-		[ExpectAttached]
-		public TextMeshProUGUI textObject;
-		[ExpectAttached]
-		public TextAsset segfault;
+		private const float secondsPerLine = 0.015f;
 
-		private bool triggered = false;
+		[ExpectAttached] public ClickBox clickBox;
+		[ExpectAttached] public TextMeshProUGUI textObject;
+		[ExpectAttached] public TextMeshProUGUI textBackgroundObject;
+		[ExpectAttached] public TextAsset segfault;
+
+		private float? timeTriggered;
+		private string[] segfaultLines;
 
 		private void Start() {
 			CheckReferences();
+			segfaultLines = segfault.text.Split(new[] {"\r\n", "\n"}, StringSplitOptions.None);
 		}
 
 		private void Update() {
-			if (!Util.IsPrefab(gameObject)) {
-				if (! triggered && clickBox.Clicked) {
-					triggered = true;
-					// TODO make game freeze
-					textObject.text = segfault.text;
+			if (! Util.IsPrefab(gameObject)) {
+				if (! timeTriggered.HasValue) {
+					if (clickBox.Clicked) {
+						timeTriggered = Time.unscaledTime;
+
+						// TODO make game freeze
+
+						StartCoroutine(NextSceneAfter(5.0f));
+					}
+				}
+				else {
+					int lines = Util.Clamp((int) ((Time.unscaledTime - timeTriggered.Value) / secondsPerLine), 0,
+							segfaultLines.Length);
+
+					textObject.text = firstSegfaultLines(lines);
+					textBackgroundObject.text = "<mark=#000000>" + firstSegfaultLines(lines);
 				}
 			}
+		}
+
+		private IEnumerator NextSceneAfter(float seconds) {
+			yield return new WaitForSecondsRealtime(seconds);
+			SceneLoader.LoadNextScene();
+		}
+
+		private string firstSegfaultLines(int n) {
+			StringBuilder builder = new StringBuilder();
+			for (int i = 0; i < n; i++) {
+				builder.Append(segfaultLines[i]);
+				builder.Append('\n');
+			}
+			return builder.ToString();
 		}
 
 	}
