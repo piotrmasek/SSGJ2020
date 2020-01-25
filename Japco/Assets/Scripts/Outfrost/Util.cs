@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -42,6 +43,12 @@ namespace Outfrost {
 				}
 				return memoryStream.ToArray();
 			}
+		}
+
+		public static int Clamp(int value, int min, int max) {
+			if (value < min) value = min;
+			else if (value > max) value = max;
+			return value;
 		}
 		
 	}
