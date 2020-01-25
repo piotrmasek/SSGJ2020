@@ -1,0 +1,45 @@
+kernel: kdialog[3319]: segfault at 56139855a000 ip 00007f07bc2db9de sp 00007ffcee9180c8 error 4 in libc-2.30.so[7f07bc19c000+14d000]
+kernel: Code: 82 ec fe ff ff 0f 18 8e 00 01 00 00 0f 18 8e 40 01 00 00 0f 18 8e 80 01 00 00 0f 18 8e c0 01 00 00 c5 fe 6f 06 c5 fe 6f 4e 20 <c5> fe 6f 56 40 c5 fe 6f 5e 60 48 81 c6 80 00 00 00 48 81 ea 80 00
+kernel: audit: type=1701 audit(1572612528.532:55): auid=1000 uid=1000 gid=1000 ses=2 pid=3319 comm="kdialog" exe="/usr/bin/kdialog" sig=11 res=1
+systemd[1]: Created slice system-systemd\x2dcoredump.slice.
+systemd[1]: Started Process Core Dump (PID 3443/UID 0).
+audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-coredump@0-3443-0 comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+kernel: audit: type=1130 audit(1572612528.545:56): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-coredump@0-3443-0 comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+plasmashell[1811]: qml: temp unit: 0
+kwin_x11[1798]: qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 51643, resource id: 73400326, major code: 15 (QueryTree), minor code: 0
+kwin_x11[1798]: qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 51648, resource id: 73400326, major code: 18 (ChangeProperty), minor code: 0
+systemd-coredump[3444]: Process 3319 (kdialog) of user 1000 dumped core.
+                        
+                        Stack trace of thread 3319:
+                        #0  0x00007f07bc2db9de __memmove_avx_unaligned_erms (libc.so.6)
+                        #1  0x00007f07bc64068c _ZN9QListData6removeEi (libQt5Core.so.5)
+                        #2  0x00007f07bc6409ea _ZN9QListData5eraseEPPv (libQt5Core.so.5)
+                        #3  0x00007f07bdb821a2 n/a (libKF5KIOCore.so.5)
+                        #4  0x00007f07bdb82d30 n/a (libKF5KIOCore.so.5)
+                        #5  0x00007f07bc7e4b70 _ZN11QMetaObject8activateEP7QObjectiiPPv (libQt5Core.so.5)
+                        #6  0x00007f07bcb808cd _ZN4KJob6resultEPS_NS_14QPrivateSignalE (libKF5CoreAddons.so.5)
+                        #7  0x00007f07bcb813bc _ZN4KJob9finishJobEb (libKF5CoreAddons.so.5)
+                        #8  0x00007f07bdb25949 _ZN3KIO9SimpleJob12slotFinishedEv (libKF5KIOCore.so.5)
+                        #9  0x00007f07bdb1cdcd _ZN3KIO7ListJob12slotFinishedEv (libKF5KIOCore.so.5)
+                        #10 0x00007f07bc7e4b70 _ZN11QMetaObject8activateEP7QObjectiiPPv (libQt5Core.so.5)
+                        #11 0x00007f07bdaf3140 _ZN3KIO14SlaveInterface8dispatchEiRK10QByteArray (libKF5KIOCore.so.5)
+                        #12 0x00007f07bdaf119c _ZN3KIO14SlaveInterface8dispatchEv (libKF5KIOCore.so.5)
+                        #13 0x00007f07bdafb00b _ZN3KIO5Slave8gotInputEv (libKF5KIOCore.so.5)
+                        #14 0x00007f07bc7e4b70 _ZN11QMetaObject8activateEP7QObjectiiPPv (libQt5Core.so.5)
+                        #15 0x00007f07bda739e1 n/a (libKF5KIOCore.so.5)
+                        #16 0x00007f07bc7e544a _ZN7QObject5eventEP6QEvent (libQt5Core.so.5)
+                        #17 0x00007f07bd31e4f5 _ZN19QApplicationPrivate13notify_helperEP7QObjectP6QEvent (libQt5Widgets.so.5)
+                        #18 0x00007f07bd327e11 _ZN12QApplication6notifyEP7QObjectP6QEvent (libQt5Widgets.so.5)
+                        #19 0x00007f07bc7b89c2 _ZN16QCoreApplication15notifyInternal2EP7QObjectP6QEvent (libQt5Core.so.5)
+                        #20 0x00007f07bc7bb739 _ZN23QCoreApplicationPrivate16sendPostedEventsEP7QObjectiP11QThreadData (libQt5Core.so.5)
+                        #21 0x00007f07bc811404 n/a (libQt5Core.so.5)
+                        #22 0x00007f07baa8e3fe g_main_context_dispatch (libglib-2.0.so.0)
+                        #23 0x00007f07baa90211 n/a (libglib-2.0.so.0)
+                        #24 0x00007f07baa90251 g_main_context_iteration (libglib-2.0.so.0)
+                        #25 0x00007f07bc810a03 _ZN20QEventDispatcherGlib13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE (libQt5Core.so.5)
+                        #26 0x00007f07bc7b74ec _ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE (libQt5Core.so.5)
+                        #27 0x00007f07bd529ade _ZN7QDialog4execEv (libQt5Widgets.so.5)
+                        #28 0x00007f07bd5299d6 _ZN7QDialog4execEv (libQt5Widgets.so.5)
+                        #29 0x0000561397858576 n/a (kdialog)
+                        #30 0x00007f07bc19e153 __libc_start_main (libc.so.6)
+                        #31 0x000056139785a0ce _start (kdialog)
