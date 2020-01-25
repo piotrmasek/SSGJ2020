@@ -9700,6 +9700,7 @@ MonoBehaviour:
   gravity: 2
   movementSpeed: 5
   animator: {fileID: 8160692482141651767}
-  particleJump: {fileID: 0}
-  particleMoveRight: {fileID: 0}
-  particleMoveLeft: {fileID: 0}
+  particleJump: {fileID: 4849942634430804931, guid: 70849068f1c7af34a8b220d07ea448c6,
+    type: 3}
+  particleMoveRight: {fileID: 8507734084857129824}
+  particleMoveLeft: {fileID: 3336485038909749558}

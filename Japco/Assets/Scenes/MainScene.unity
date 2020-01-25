@@ -121,24 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!198 &1204428042 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8969810388838064178, guid: b37b763b27cc7c809b6fbdd57b903297,
-    type: 3}
-  m_PrefabInstance: {fileID: 6989162600093736195}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1513016015 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2077900240221569355, guid: b37b763b27cc7c809b6fbdd57b903297,
-    type: 3}
-  m_PrefabInstance: {fileID: 6989162600093736195}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1985191374 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2605107407280910948, guid: b37b763b27cc7c809b6fbdd57b903297,
-    type: 3}
-  m_PrefabInstance: {fileID: 6989162600093736195}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6989162600093736195
 PrefabInstance:
   m_ObjectHideFlags: 0

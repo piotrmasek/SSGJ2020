@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Outfrost;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : CheckedMonoBehaviour
 {
     public float jumpSpeed = 10f;
     public float jumpTime;
@@ -10,10 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = 2f;
     public float movementSpeed = 5f;
 
-    public Animator animator;
-    public ParticleSystem particleJump;
-    public ParticleSystem particleMoveRight;
-    public ParticleSystem particleMoveLeft;
+    [ExpectAttached] public Animator animator;
+    [ExpectAttached] public ParticleSystem particleJump;
+    [ExpectAttached] public ParticleSystem particleMoveRight;
+    [ExpectAttached] public ParticleSystem particleMoveLeft;
 
     private float jumpTimeCounter;
 
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded = true;
     // Start is called before the first frame update
     void Start() {
+        CheckReferences();
         Time.timeScale = 1.0f;
         rigidBody = GetComponent<Rigidbody2D>();
     }
