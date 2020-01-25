@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public static class SceneLoader
 {
@@ -17,5 +18,11 @@ public static class SceneLoader
     public static void QuitGame()
     {
         Application.Quit();
+    }
+
+    public static IEnumerator NextSceneAfterAsync(float seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+        SceneLoader.LoadNextScene();
     }
 }

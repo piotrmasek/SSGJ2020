@@ -10,6 +10,7 @@ public class PlayerMovement : CheckedMonoBehaviour
     public bool isJumping = false;
     public float gravity = 2f;
     public float movementSpeed = 5f;
+    public bool JumpEnabled = true;
 
     [ExpectAttached] public Animator animator;
     [ExpectAttached] public ParticleSystem particleJump;
@@ -18,10 +19,11 @@ public class PlayerMovement : CheckedMonoBehaviour
 
     private float jumpTimeCounter;
 
-    Rigidbody2D rigidBody;
+    public Rigidbody2D rigidBody { get; private set; }
     bool isGrounded = true;
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         CheckReferences();
         Time.timeScale = 1.0f;
         rigidBody = GetComponent<Rigidbody2D>();
@@ -35,7 +37,7 @@ public class PlayerMovement : CheckedMonoBehaviour
         rigidBody.velocity = new Vector2(horizontal * movementSpeed, rigidBody.velocity.y);
 
 
-        if(horizontal != 0f)
+        if (horizontal != 0f)
         {
             animator.SetBool("IsMoving", true);
             if (!particleMoveRight.isPlaying && horizontal < 0) particleMoveRight.Play();
@@ -75,28 +77,29 @@ public class PlayerMovement : CheckedMonoBehaviour
             isJumping = false;
         }
 
-        if (Input.GetAxis("Jump") != 0f && isGrounded)
+        if (JumpEnabled && Input.GetAxis("Jump") != 0f)
         {
-            Jump();
-        }
-
-        if (Input.GetAxis("Jump") != 0f && isGrounded == false && isJumping)
-        {
-            if (jumpTimeCounter > 0)
+            if (isGrounded)
             {
-                rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
-                jumpTimeCounter -= Time.deltaTime;
-                Debug.Log("In the AIR for: " + jumpTimeCounter);
+                Jump();
             }
-            else
+            else if (isJumping)
             {
-                Debug.Log("String to fall");
-                isJumping = false;
-                animator.SetBool("HasJumped", false);
+                if (jumpTimeCounter > 0)
+                {
+                    rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
+                    jumpTimeCounter -= Time.deltaTime;
+                    Debug.Log("In the AIR for: " + jumpTimeCounter);
+                }
+                else
+                {
+                    Debug.Log("String to fall");
+                    isJumping = false;
+                    animator.SetBool("HasJumped", false);
+                }
             }
         }
-
-        if (Input.GetKeyUp("space"))
+        else
         {
             Falling();
         }

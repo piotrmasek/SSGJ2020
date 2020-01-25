@@ -66,6 +66,20 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!114 &950256154376487871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6989162599540900552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473714ec810fcb647925638f18e5ce53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8874970363111950437}
+  PlayerSprite: {fileID: 8421617098606838322}
 --- !u!1 &6989162600344708479
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,9 +270,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e98fa77ac27ce4d8166046b1fc72c9, type: 3}
+--- !u!1 &6989162599540900552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7680007699437554074, guid: 05e98fa77ac27ce4d8166046b1fc72c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 750588301209586514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6989162599540900558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7680007699437554076, guid: 05e98fa77ac27ce4d8166046b1fc72c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 750588301209586514}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8421617098606838322 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9130265619428034912, guid: 05e98fa77ac27ce4d8166046b1fc72c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 750588301209586514}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8874970363111950437 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8160692482141651767, guid: 05e98fa77ac27ce4d8166046b1fc72c9,
     type: 3}
   m_PrefabInstance: {fileID: 750588301209586514}
   m_PrefabAsset: {fileID: 0}
@@ -510,6 +542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721162917367628114, guid: 131304b91d8031240a5066170da06d90,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ceiling
       objectReference: {fileID: 0}
     - target: {fileID: 2721162918061124233, guid: 131304b91d8031240a5066170da06d90,
         type: 3}
