@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float JumpSpeed = 10f;
-    public float MovementSpeed = 5f;
+    public float jumpSpeed = 10f;
+    public float jumpTime;
+    public bool isJumping = false;
+    public float gravity = 2f;
+    public float movementSpeed = 5f;
+    public Animator animator;
+    private float jumpTimeCounter;
 
     Rigidbody2D rigidBody;
     bool isGrounded = true;
@@ -20,30 +25,73 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
 
-        rigidBody.velocity = new Vector2(horizontal * MovementSpeed, rigidBody.velocity.y);
+        rigidBody.velocity = new Vector2(horizontal * movementSpeed, rigidBody.velocity.y);
         
-        if(Input.GetButton("Jump") && isGrounded)
+        if(horizontal != 0f)
         {
-            Jump();    
+            animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
         }
 
-        if(!isGrounded)
+        if(rigidBody.velocity.y == 0)
         {
-            ProcessGravity();
+            isJumping = false;
+            isGrounded = true;
+        }
+
+        if(Input.GetKeyDown("space") && isGrounded)
+        {
+            Jump();
+        }
+
+        if (Input.GetKey("space") && isGrounded == false && isJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
+                jumpTimeCounter -= Time.deltaTime;
+                Debug.Log("In the AIR for: " + jumpTimeCounter);
+            }
+            else
+            {
+                Debug.Log("String to fall");
+                isJumping = false;
+                animator.SetBool("HasJumped", false);
+            }
+        }
+
+        if (Input.GetKeyUp("space"))
+        {
+            Falling();
+        }
+
+    }
+
+    private void Falling()
+    {
+        Debug.Log("Fallin");
+        if (rigidBody.velocity.y < 0)
+        {
+            Debug.Log(rigidBody.velocity.x + ", " + rigidBody.velocity.y); 
+        }
+        else
+        {
+            animator.SetBool("HasJumped", false);
         }
     }
 
     void Jump()
     {
         Debug.Log("Jump");
-        rigidBody.velocity += new Vector2(0f, JumpSpeed);
+        animator.SetBool("HasJumped", true);
+        rigidBody.velocity += new Vector2(rigidBody.velocity.x, jumpSpeed);
+        isGrounded = false;
 
-
+        jumpTimeCounter = jumpTime;
+        isJumping = true;
     }
 
-    void ProcessGravity()
-    {
-        Debug.Log(Physics2D.gravity);
-        rigidBody.velocity -= Physics2D.gravity * Time.deltaTime; //TODO: doesnt work, lol
-    }
 }
