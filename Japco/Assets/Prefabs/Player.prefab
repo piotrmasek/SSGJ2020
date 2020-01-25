@@ -90,7 +90,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958129470860893730}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7be79190b404d1f408a3a99095408504, type: 2}
   m_CullingMode: 0
@@ -143,7 +143,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7680007699437554074}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afafbf11a0f1c642bb2b5936781e947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 3
+  jumpSpeed: 8
   jumpTime: 0.2
   isJumping: 0
   gravity: 2
