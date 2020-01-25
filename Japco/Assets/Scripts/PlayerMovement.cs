@@ -96,10 +96,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Platform")
         {
-            // Check if any of the contact points is unerneath
+            // Check if any of the contact points are unerneath
             foreach (var contact in other.contacts)
             {
-                Debug.LogWarning(contact.normal);
+                Debug.Log(contact.normal, this);
                 if (contact.normal.y > 0.8f)
                 {
                     isGrounded = true;
