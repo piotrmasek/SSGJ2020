@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ScreenLoader : MonoBehaviour {
+public static class SceneLoader {
 
-	public void LoadNextScene() {
+	public static void LoadNextScene() {
 		int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 		SceneManager.LoadScene(currentSceneIndex + 1);
 	}
 
-	public void LoadStartScene() {
+	public static void LoadStartScene() {
 		SceneManager.LoadScene(0);
 	}
 
-	public void QuitGame() {
+	public static void QuitGame() {
 		Application.Quit();
 	}
 

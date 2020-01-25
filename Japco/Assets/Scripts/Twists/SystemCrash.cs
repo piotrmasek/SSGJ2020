@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using UnityEngine;
@@ -33,6 +34,8 @@ namespace Twists {
 						timeTriggered = Time.unscaledTime;
 
 						// TODO make game freeze
+
+						StartCoroutine(NextSceneAfter(5.0f));
 					}
 				}
 				else {
@@ -43,6 +46,11 @@ namespace Twists {
 					textBackgroundObject.text = "<mark=#000000>" + firstSegfaultLines(lines);
 				}
 			}
+		}
+
+		private IEnumerator NextSceneAfter(float seconds) {
+			yield return new WaitForSecondsRealtime(seconds);
+			SceneLoader.LoadNextScene();
 		}
 
 		private string firstSegfaultLines(int n) {
