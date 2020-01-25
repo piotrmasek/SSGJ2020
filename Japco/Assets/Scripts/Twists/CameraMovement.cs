@@ -1,6 +1,6 @@
-using System;
 using Outfrost;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Twists {
 
@@ -14,11 +14,16 @@ namespace Twists {
 		private void Start() {
 			CheckReferences();
 			playerMovement.enabled = false;
+			Debug.Log(SceneManager.GetActiveScene().buildIndex);
 		}
 
 		private void Update() {
-			float horizontal = Input.GetAxis("Horizontal");
 			Vector3 position = camera.transform.position;
+			if (Mathf.Abs(maxCameraX - position.x) < Mathf.Epsilon) {
+				SceneLoader.LoadNextScene();
+			}
+			
+			float horizontal = Input.GetAxis("Horizontal");
 			
 			position.x += horizontal * playerMovement.movementSpeed * Time.deltaTime;
 			position.x = Mathf.Clamp(position.x, minCameraX, maxCameraX);
