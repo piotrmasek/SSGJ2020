@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GrowthScene.unity
     guid: 32f53ead196a6424ba0f2adfbbffa009
+  - enabled: 1
+    path: Assets/Scenes/TrueWin.unity
+    guid: 0cf9550f374b32d4280090e2f00d7c77
   m_configObjects: {}
