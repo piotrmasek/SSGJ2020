@@ -1,2 +1,2 @@
 # Exclude dependency assets from language statistics
-"[Aa]ssets/TextMesh Pro/**" linguist-vendored
+[Aa]ssets/TextMesh[[:space:]]Pro/** linguist-vendored
