@@ -203,7 +203,7 @@ PrefabInstance:
     - target: {fileID: 8095724288770323565, guid: 24d3e734020bd944284e48ee4cb64ce9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8095724288770323565, guid: 24d3e734020bd944284e48ee4cb64ce9,
         type: 3}
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1547166291}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -366,9 +366,9 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_spriteAsset: {fileID: 0}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 1547166291}
+  m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1354601333}
   m_TextComponent: {fileID: 6989162600093736197}
   m_materialReferenceIndex: 1
@@ -380,7 +380,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354601330}
   m_CullTransparentMesh: 0
---- !u!21 &1547166291
+--- !u!21 &1606247230
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -453,6 +453,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5467214334264647167, guid: 0513f14351569c345be7098ead6dc9e1,
         type: 3}
+    - target: {fileID: 2105908812221018144, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1606247230}
     - target: {fileID: 6989162599387157027, guid: b37b763b27cc7c809b6fbdd57b903297,
         type: 3}
       propertyPath: m_Enabled
