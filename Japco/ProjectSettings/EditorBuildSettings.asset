@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BluescreenScene.unity
     guid: aba446a4b49fb6b458b1e01c8ad7c8a5
   - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
     path: Assets/Scenes/AppleSwapScene.unity
     guid: e1edee2e2b8492f499e2b610cfd04530
   - enabled: 1
@@ -24,8 +27,8 @@ EditorBuildSettings:
     path: Assets/Scenes/ExtrudeJumpScene.unity
     guid: 5ab971daa5f046246a1f3aa6963ebd38
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/SegfaultScene.unity
+    guid: 99f6aaafaa3769364a3e1667a8febdba
   - enabled: 1
     path: Assets/Scenes/GrowthScene.unity
     guid: 32f53ead196a6424ba0f2adfbbffa009

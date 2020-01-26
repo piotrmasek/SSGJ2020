@@ -16,7 +16,8 @@ namespace Twists
 
         private const float secondsPerLine = 0.015f;
 
-        [ExpectAttached] public ClickBox clickBox;
+        [ExpectAttached] public PlayerMovement playerMovement;
+        [ExpectAttached] public MovingPlatform platform;
         [ExpectAttached] public TextMeshProUGUI textObject;
         [ExpectAttached] public TextMeshProUGUI textBackgroundObject;
         [ExpectAttached] public TextAsset segfault;
@@ -28,15 +29,16 @@ namespace Twists
         {
             CheckReferences();
             segfaultLines = segfault.text.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+            playerMovement.enabled = false;
         }
 
-        private void Update()
-        {
+        private void Update() {
             if (!Util.IsPrefab(gameObject))
             {
                 if (!timeTriggered.HasValue)
                 {
-                    if (clickBox.Clicked)
+                    if (platform.HasHitSomething)
                     {
                         timeTriggered = Time.unscaledTime;
 
@@ -54,6 +56,10 @@ namespace Twists
                     textBackgroundObject.text = "<mark=#000000>" + firstSegfaultLines(lines);
                 }
             }
+            
+            Vector3 input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+            input *= playerMovement.movementSpeed * Time.deltaTime;
+            platform.transform.position += input;
         }
 
         private string firstSegfaultLines(int n)
