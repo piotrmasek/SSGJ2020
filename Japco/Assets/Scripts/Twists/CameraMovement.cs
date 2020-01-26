@@ -14,7 +14,6 @@ namespace Twists {
 		private void Start() {
 			CheckReferences();
 			playerMovement.enabled = false;
-			Debug.Log(SceneManager.GetActiveScene().buildIndex);
 		}
 
 		private void Update() {
