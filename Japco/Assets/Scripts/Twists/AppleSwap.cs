@@ -66,7 +66,7 @@ namespace Twists
                 PerformSwap(appleMovement, playerMovement);
                 appleMovement.enabled = false;
                 playerMovement.enabled = false;
-                StartCoroutine(SceneLoader.NextSceneAfterAsync(1f));
+                SceneLoader.LoadNextScene();
             }
         }
     }
