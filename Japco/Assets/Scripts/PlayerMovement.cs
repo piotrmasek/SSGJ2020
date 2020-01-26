@@ -11,6 +11,7 @@ public class PlayerMovement : CheckedMonoBehaviour
     public float gravity = 2f;
     public float movementSpeed = 5f;
     public bool JumpEnabled = true;
+    public int jumpCount = -1;
 
     [ExpectAttached] public Animator animator;
     [ExpectAttached] public ParticleSystem particleJump;
@@ -88,7 +89,7 @@ public class PlayerMovement : CheckedMonoBehaviour
                 if (jumpTimeCounter > 0)
                 {
                     rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
-                    jumpTimeCounter -= Time.deltaTime;
+                    jumpTimeCounter -= Time.deltaTime;                  
                 }
                 else
                 {
@@ -106,7 +107,11 @@ public class PlayerMovement : CheckedMonoBehaviour
 
     private void Falling()
     {
-        if (rigidBody.velocity.y >= 0)
+        if (rigidBody.velocity.y < 0)
+        {
+
+        }
+        else
         {
             animator.SetBool("HasJumped", false);
         }
@@ -133,6 +138,8 @@ public class PlayerMovement : CheckedMonoBehaviour
             {
                 if (contact.normal.y > 0.8f)
                 {
+                    Debug.LogWarning("Entered");
+                    jumpCount++;
                     isGrounded = true;
                     break;
                 }
@@ -144,7 +151,10 @@ public class PlayerMovement : CheckedMonoBehaviour
     {
         if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Platform")
         {
+            Debug.Log("Exit");
             isGrounded = false;
         }
     }
+
+    public bool IsGrounded { get; private set; }
 }
