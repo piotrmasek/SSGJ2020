@@ -8,6 +8,7 @@ using Outfrost;
 public class FakeWin : CheckedMonoBehaviour
 {
     [ExpectAttached] public TextMeshProUGUI winText;
+    [ExpectAttached] public TextMeshPro tutorialText;
     [ExpectAttached] public Sprite whiteSprite;
 
     // Start is called before the first frame update
@@ -52,6 +53,7 @@ public class FakeWin : CheckedMonoBehaviour
         GameObject.FindGameObjectWithTag("Background").SetActive(false);
         Camera.main.backgroundColor = new Color(255, 0, 255);
         winText.enabled = false;
+        tutorialText.enabled = false;
     }
 
     public IEnumerator MakeSpriteMagentaAsync(GameObject[] objects, float seconds)
