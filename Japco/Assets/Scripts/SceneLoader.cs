@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using Outfrost;
 
 public static class SceneLoader
 {
     public static void LoadNextScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(nextSceneIndex < SceneManager.sceneCountInBuildSettings
+                               ? nextSceneIndex
+                               : 0);
     }
 
     public static void LoadStartScene()
