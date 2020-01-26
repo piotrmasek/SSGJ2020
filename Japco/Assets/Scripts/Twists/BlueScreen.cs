@@ -13,6 +13,8 @@ public class BlueScreen : MonoBehaviour
         {
             blueScreenImage.enabled = true;
             StartCoroutine(SceneLoader.NextSceneAfterAsync(5f));
+            FindObjectOfType<AudioSource>().Pause();
+
         }
     }
 }

@@ -15,6 +15,7 @@ public class FakeWin : CheckedMonoBehaviour
     void Start()
     {
         CheckReferences();
+        FindObjectOfType<AudioSource>().Play();
     }
 
     // Update is called once per frame

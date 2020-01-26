@@ -45,6 +45,8 @@ public class TrueWin : MonoBehaviour
                 StartCoroutine(SpawnParticleAsync(particle1, pos, i));
                 StartCoroutine(SpawnParticleAsync(particle2, pos, i));
             }
+
+            StartCoroutine(SceneLoader.NextSceneAfterAsync(15f));
         }
     }
 
