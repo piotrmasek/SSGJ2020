@@ -343,6 +343,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 177
       objectReference: {fileID: 0}
+    - target: {fileID: 3229485843888634727, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6126820244140086613, guid: b37b763b27cc7c809b6fbdd57b903297,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -453,22 +458,22 @@ PrefabInstance:
     - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
         type: 3}
       propertyPath: m_text
-      value: CATCH   THE   JAPCO!
+      value: Play   time   is   over!
       objectReference: {fileID: 0}
     - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
         type: 3}

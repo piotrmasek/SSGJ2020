@@ -279,5 +279,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: m_text
+      value: GET   THE   JAPCO!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37b763b27cc7c809b6fbdd57b903297, type: 3}
