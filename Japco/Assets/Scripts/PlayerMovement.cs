@@ -89,11 +89,9 @@ public class PlayerMovement : CheckedMonoBehaviour
                 {
                     rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
                     jumpTimeCounter -= Time.deltaTime;
-                    Debug.Log("In the AIR for: " + jumpTimeCounter);
                 }
                 else
                 {
-                    Debug.Log("String to fall");
                     isJumping = false;
                     animator.SetBool("HasJumped", false);
                 }
@@ -108,12 +106,7 @@ public class PlayerMovement : CheckedMonoBehaviour
 
     private void Falling()
     {
-        Debug.Log("Fallin");
-        if (rigidBody.velocity.y < 0)
-        {
-            Debug.Log(rigidBody.velocity.x + ", " + rigidBody.velocity.y);
-        }
-        else
+        if (rigidBody.velocity.y >= 0)
         {
             animator.SetBool("HasJumped", false);
         }
@@ -121,7 +114,6 @@ public class PlayerMovement : CheckedMonoBehaviour
 
     void Jump()
     {
-        Debug.Log("Jump");
         animator.SetBool("HasJumped", true);
         rigidBody.velocity += new Vector2(rigidBody.velocity.x, jumpSpeed);
         ParticleSystem ps = Instantiate(particleJump, transform.position, Quaternion.identity) as ParticleSystem;

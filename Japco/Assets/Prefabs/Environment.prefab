@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8874970363111950437}
   PlayerSprite: {fileID: 8421617098606838322}
+  IsDead: 0
 --- !u!1 &6989162600344708479
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +212,11 @@ PrefabInstance:
     - target: {fileID: 7680007699437554074, guid: 05e98fa77ac27ce4d8166046b1fc72c9,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680007699437554074, guid: 05e98fa77ac27ce4d8166046b1fc72c9,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7680007699437554076, guid: 05e98fa77ac27ce4d8166046b1fc72c9,
@@ -701,6 +707,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2995396971067407, guid: 5f5c2a1aa7a2aa447be580db636f3718, type: 3}
       propertyPath: m_Name
+      value: Apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995396971067407, guid: 5f5c2a1aa7a2aa447be580db636f3718, type: 3}
+      propertyPath: m_TagString
       value: Apple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
