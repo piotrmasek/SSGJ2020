@@ -121,7 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &107995083
+--- !u!21 &597763460
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 597763460}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -426,9 +426,9 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_spriteAsset: {fileID: 0}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 0}
+  m_sharedMaterial: {fileID: 597763460}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 1354601333}
   m_TextComponent: {fileID: 6989162600093736197}
   m_materialReferenceIndex: 1
@@ -457,7 +457,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 107995083}
+      objectReference: {fileID: 597763460}
     - target: {fileID: 3006082184012006069, guid: b37b763b27cc7c809b6fbdd57b903297,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -573,6 +573,33 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1354601332}
+    - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e0c773b6e7f4b14ab3765c09684ca95,
+        type: 2}
+    - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5806830552204163650, guid: 1e0c773b6e7f4b14ab3765c09684ca95,
+        type: 2}
+    - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811845581680058153, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6989162599540900557, guid: b37b763b27cc7c809b6fbdd57b903297, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b37b763b27cc7c809b6fbdd57b903297, type: 3}
