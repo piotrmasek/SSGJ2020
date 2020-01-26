@@ -315,6 +315,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 950256154376487871, guid: b37b763b27cc7c809b6fbdd57b903297,
+        type: 3}
+      propertyPath: dyingAnimation
+      value: 
+      objectReference: {fileID: 5467214334264647167, guid: 0513f14351569c345be7098ead6dc9e1,
+        type: 3}
     - target: {fileID: 6989162599387157027, guid: b37b763b27cc7c809b6fbdd57b903297,
         type: 3}
       propertyPath: m_Enabled
